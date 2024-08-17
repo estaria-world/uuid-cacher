@@ -11,6 +11,8 @@ fun String.isUUID(): Boolean {
 }
 
 fun String.toUUID(): UUID {
+    if (this.count { it == '-' } == 4)
+        return UUID.fromString(this)
     val uuidString = this.replace(Regex("(.{8})(.{4})(.{4})(.{4})(.{12})"), "$1-$2-$3-$4-$5")
     return UUID.fromString(uuidString)
 }
