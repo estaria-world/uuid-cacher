@@ -13,6 +13,9 @@ repositories {
 
 dependencies {
     compileOnly(kotlin("stdlib"))
+
+    // avionik dependencies
+    compileOnly("world.avionik:database-simplified-kit:1.1.0")
 }
 
 publishing {
