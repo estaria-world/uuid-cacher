@@ -10,17 +10,24 @@ version = "1.0.1"
 
 repositories {
     mavenCentral()
+
+    // simplecloud repository
+    maven("https://repo.thesimplecloud.eu/artifactory/list/gradle-release-local/")
 }
 
 dependencies {
     implementation(kotlin("stdlib"))
 
     // avionik dependencies
-    compileOnly("world.avionik:database-simplified-kit:1.1.0")
+    implementation("world.avionik:database-simplified-kit:1.1.0")
+    runtimeOnly("world.avionik:config-kit:1.0.2")
 
     // kotlinx dependencies
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+
+    // simplecloud dependencies
+    runtimeOnly("eu.thesimplecloud.jsonlib:json-lib:1.0.10")
 }
 
 publishing {
